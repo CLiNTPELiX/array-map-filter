@@ -38,8 +38,15 @@ Exemple d'entrée:
 
  */
 
-function searchWordFilter(items, search) {
+function searchWordFilter(things, search) {
+  const searchFilter = things.filter(function(name) {
+    if (name.toLowerCase().includes(search.toLowerCase())) {
+      return name;
+    }
+  });
+  return searchFilter;
 }
+
 
 // Ne pas modifier l'export
 module.exports = searchWordFilter;

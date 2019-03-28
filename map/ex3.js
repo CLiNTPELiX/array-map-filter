@@ -60,6 +60,16 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  const movieLabel = movies.map(entr => {
+    if (entr.rating < 60) {
+      entr.label = 'rotten';
+    } else if (entr.rating >= 60 && entr.rating <= 75) {
+      entr.label = 'fresh';
+    } else if (entr.rating > 75) {
+      entr.label = 'certified fresh';
+    }
+  });
+  return movies;
 }
 
 
